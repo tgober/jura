@@ -272,13 +272,6 @@ MODEL_MAP = {
             (F_CLEANINGS,             "counter_9"),
             (F_BREW_MOVEMENTS,        "counter_11"),
             (F_GROUNDS_LEVEL,         "counter_15"),
-        ],
-        "text": [
-            (F_TRAY_STATUS,           "tray_status"),
-            (F_TANK_STATUS,           "water_tank_status"),
-            (F_MACHINE_STATUS,        "machine_status"),
-            (F_COUNTERS_CHANGED,      "counters_changed"),
-            (F_IC_BITS,               "ic_bits"),
             (F_IC_BIT_A,              "ic_bit_a"),
             (F_IC_BIT_B,              "ic_bit_b"),
             (F_IC_BIT_C,              "ic_bit_c"),
@@ -298,6 +291,13 @@ MODEL_MAP = {
             (F_COUNTER_14,            "counter_14"),
             (F_COUNTER_15,            "counter_15"),
             (F_COUNTER_16,            "counter_16"),
+        ],
+        "text": [
+            (F_TRAY_STATUS,           "tray_status"),
+            (F_TANK_STATUS,           "water_tank_status"),
+            (F_MACHINE_STATUS,        "machine_status"),
+            (F_COUNTERS_CHANGED,      "counters_changed"),
+            (F_IC_BITS,               "ic_bits"),
         ],
     },
 }
