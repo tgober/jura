@@ -95,6 +95,12 @@ class Jura : public PollingComponent, public uart::UARTDevice {
     publish_number("counter_15", get_counter_n_(current, 15));
     publish_number("counter_16", get_counter_n_(current, 16));
 
+    for(
+      size_t i = 0; i < current.size(); ++i) {
+        ESP_LOGD("jura", "Counter %zu: %ld", i + 1, current[i]);
+      }
+    )
+
     publish_counter_changes_(current);
 
     // ---- flags ----
