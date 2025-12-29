@@ -65,7 +65,7 @@ class Jura : public PollingComponent, public uart::UARTDevice {
 
   void update() override {
     std::string fw_info = cmd2jura("TY:");
-    ESP_LOGI("jura", "Jura TY response: %s", fw_info.c_str());
+    ESP_LOGD("jura-trace", "Jura TY response: %s", fw_info.c_str());
 
     // ---- counters ----
     std::string result = cmd2jura("RT:0000");
@@ -96,7 +96,7 @@ class Jura : public PollingComponent, public uart::UARTDevice {
     publish_number("counter_16", get_counter_n_(current, 16));
 
     for(size_t i = 0; i < current.size(); ++i) {
-      ESP_LOGD("jura", "Counter %zu: %ld", i + 1, current[i]);
+      ESP_LOGD("jura-trace", "Counter %zu: %ld", i + 1, current[i]);
     }
     
 
@@ -106,7 +106,7 @@ class Jura : public PollingComponent, public uart::UARTDevice {
     std::string ic = cmd2jura("IC:");
     if (ic.size() >= 7) {
       //Print ic to log output here
-      ESP_LOGD("jura", "IC: %s", ic.c_str());
+      ESP_LOGD("jura-trace", "IC: %s", ic.c_str());
 
 
       byte a = static_cast<byte>(strtol(ic.substr(3,2).c_str(), NULL, 16));
