@@ -63,15 +63,10 @@ class Jura : public PollingComponent, public uart::UARTDevice {
     return inbytes.substr(0, inbytes.size() - 2);
   }
 
-
-  void setup() override {
-    super::setup();
-    ESP_LOGI("jura", "Jura model: %s", model_.c_str());
+  void update() override {
     std::string result = cmd2jura("TY:");
     ESP_LOGI("jura", "Jura TY response: %s", result.c_str());
-  }
 
-  void update() override {
     // ---- counters ----
     std::string result = cmd2jura("RT:0000");
     if (result.empty() || result.size() < 64) {
