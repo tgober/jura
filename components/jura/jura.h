@@ -97,6 +97,10 @@ class Jura : public PollingComponent, public uart::UARTDevice {
     // ---- flags ----
     std::string ic = cmd2jura("IC:");
     if (ic.size() >= 7) {
+      //Print ic to log output here
+      ESP_LOGD("jura", "IC: %s", ic.c_str());
+      
+
       byte a = static_cast<byte>(strtol(ic.substr(3,2).c_str(), NULL, 16));
       byte b = static_cast<byte>(strtol(ic.substr(5,2).c_str(), NULL, 16));
 
