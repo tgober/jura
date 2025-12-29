@@ -97,6 +97,7 @@ class Jura : public PollingComponent, public uart::UARTDevice {
 
     for(size_t i = 0; i < current.size(); ++i) {
       ESP_LOGD("jura-trace", "Counter %zu: %ld", i + 1, current[i]);
+      publish_number("counter_" + std::to_string(i + 1) , current[i]);
     }
     
 
@@ -111,6 +112,15 @@ class Jura : public PollingComponent, public uart::UARTDevice {
 
       byte a = static_cast<byte>(strtol(ic.substr(3,2).c_str(), NULL, 16));
       byte b = static_cast<byte>(strtol(ic.substr(5,2).c_str(), NULL, 16));
+      
+      publish_number("ic_bit_a", a);
+      publish_number("ic_bit_b", b);
+      
+      if (ic.size() >= 9) {
+        byte c = static_cast<byte>(strtol(ic.substr(7,2).c_str(), NULL, 16));
+        publish_number("ic_bit_c", c);
+      }
+
 
       publish_ic_bits_if_changed_(a, b);     
 

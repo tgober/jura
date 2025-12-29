@@ -55,6 +55,27 @@ F_MACHINE_STATUS        = "machine_status"
 F_COUNTERS_CHANGED      = "counters_changed"
 F_IC_BITS = "ic_bits"
 
+F_IC_BIT_A = "ic_bit_a"
+F_IC_BIT_B = "ic_bit_b"
+F_IC_BIT_C = "ic_bit_c"
+
+F_COUNTER_1 = "counter_1"
+F_COUNTER_2 = "counter_2"
+F_COUNTER_3 = "counter_3"
+F_COUNTER_4 = "counter_4"   
+F_COUNTER_5 = "counter_5"
+F_COUNTER_6 = "counter_6"
+F_COUNTER_7 = "counter_7"
+F_COUNTER_8 = "counter_8"
+F_COUNTER_9 = "counter_9"
+F_COUNTER_10 = "counter_10"
+F_COUNTER_11 = "counter_11"
+F_COUNTER_12 = "counter_12"
+F_COUNTER_13 = "counter_13"
+F_COUNTER_14 = "counter_14"
+F_COUNTER_15 = "counter_15"
+F_COUNTER_16 = "counter_16"
+
 # C++ binding
 jura_ns = cg.esphome_ns.namespace("jura")
 Jura = jura_ns.class_("Jura", cg.PollingComponent, uart.UARTDevice)
@@ -114,6 +135,44 @@ CONFIG_SCHEMA = cv.Schema({
         text_sensor.text_sensor_schema(icon="mdi:format-list-bulleted",entity_category=ENTITY_CATEGORY_DIAGNOSTIC),    
     cv.Optional(F_IC_BITS, default={CONF_NAME: "IC Bits"}):
         text_sensor.text_sensor_schema(icon="mdi:binary",entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_IC_BIT_A, default={CONF_NAME: "IC Bit A"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:binary", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_IC_BIT_B, default={CONF_NAME: "IC Bit B"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:binary", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_IC_BIT_C, default={CONF_NAME: "IC Bit C"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:binary", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_COUNTER_1, default={CONF_NAME: "Counter 1"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:counter", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_COUNTER_2, default={CONF_NAME: "Counter 2"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:counter", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_COUNTER_3, default={CONF_NAME: "Counter 3"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:counter", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_COUNTER_4, default={CONF_NAME: "Counter 4"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:counter", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_COUNTER_5, default={CONF_NAME: "Counter 5"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:counter", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_COUNTER_6, default={CONF_NAME: "Counter 6"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:counter", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_COUNTER_7, default={CONF_NAME: "Counter 7"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:counter", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_COUNTER_8, default={CONF_NAME: "Counter 8"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:counter", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_COUNTER_9, default={CONF_NAME: "Counter 9"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:counter", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_COUNTER_10, default={CONF_NAME: "Counter 10"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:counter", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_COUNTER_11, default={CONF_NAME: "Counter 11"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:counter", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_COUNTER_12, default={CONF_NAME: "Counter 12"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:counter", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_COUNTER_13, default={CONF_NAME: "Counter 13"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:counter", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_COUNTER_14, default={CONF_NAME: "Counter 14"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:counter", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_COUNTER_15, default={CONF_NAME: "Counter 15"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:counter", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
+    cv.Optional(F_COUNTER_16, default={CONF_NAME: "Counter 16"}):
+        sensor.sensor_schema(unit_of_measurement=UNIT_EMPTY, icon="mdi:counter", accuracy_decimals=0, entity_category=ENTITY_CATEGORY_DIAGNOSTIC),
 }).extend(uart.UART_DEVICE_SCHEMA).extend(cv.polling_component_schema("2s"))
 
 # ---------- MODEL → which fields to expose & which publish keys they map to ----------
